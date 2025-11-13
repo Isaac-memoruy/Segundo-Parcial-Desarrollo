@@ -1,15 +1,14 @@
 <template>
-  <footer class="site-footer">
-    <div class="footer__container">
-      <div class="footer__brand">
-        <h2 class="footer__title">Game Zone</h2>
-        <p class="footer__description">Tu destino para encontrar los mejores juegos, novedades y reseñas — todo en un solo lugar.</p>
-      </div>
-
-      <hr class="footer__separator" />
-
-      <div class="footer__legal">
-        <p class="footer__copyright">© <span>{{ year }}</span> Game Zone. Todos los derechos reservados.</p>
+  <footer class="bg-dark text-light py-4 mt-5 border-top border-secondary">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="fw-bold">🎮 Game Zone</h5>
+          <p class="small text-muted">Tu destino para encontrar los mejores juegos, novedades y reseñas — todo en un solo lugar.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="small text-muted">© {{ year }} Game Zone. Todos los derechos reservados.</p>
+        </div>
       </div>
     </div>
   </footer>
@@ -28,7 +27,8 @@ export default {
 </script>
 
 <style scoped>
-.site-footer { background:#071129; color:#fff; padding:1rem }
-.footer__container { max-width:1100px; margin:0 auto }
-.footer__title { margin:0 }
+footer {
+  background-color: #071129 !important;
+  margin-top: auto;
+}
 </style>

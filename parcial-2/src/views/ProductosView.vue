@@ -1,12 +1,19 @@
 <template>
-  <div>
-    <header class="products-header">
-      <h1 class="products-title">Productos</h1>
+  <div class="container-fluid py-5">
+    <header class="mb-5 text-center">
+      <h1 class="display-4 fw-bold mb-2">🎮 Productos</h1>
+      <p class="text-muted lead">Descubre nuestro catálogo de juegos</p>
     </header>
 
-    <section class="product-grid">
-      <GameCard v-for="game in games" :key="game.steam_appid" :title="game.name" :appId="game.steam_appid" :imageUrl="game.capsule_image" :price="getPriceText(game)" />
-    </section>
+    <div class="row g-4">
+      <div v-for="game in games" :key="game.steam_appid" class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <GameCard :title="game.name" :appId="game.steam_appid" :imageUrl="game.capsule_image" :price="getPriceText(game)" />
+      </div>
+    </div>
+
+    <div v-if="games.length === 0" class="alert alert-info text-center mt-5">
+      <p>Cargando juegos...</p>
+    </div>
   </div>
 </template>
 
@@ -47,6 +54,7 @@ export default {
 </script>
 
 <style scoped>
-.product-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1rem; padding:1rem }
-.products-header { text-align:center }
+.container-fluid {
+  min-height: calc(100vh - 300px);
+}
 </style>

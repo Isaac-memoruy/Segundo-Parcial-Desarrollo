@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" class="d-flex flex-column min-vh-100">
     <Header />
-    <main>
+    <main class="flex-grow-1">
       <router-view />
     </main>
     <Footer />
@@ -22,16 +22,25 @@ export default {
 </script>
 
 <style>
-
-body, html, #app {
+html,
+body,
+#app {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  height: 100%;
   background: #0f1720;
-  color: #fff;
+  color: #c6d4df;
   font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 main {
+  flex: 1;
   padding: 1rem;
 }
 </style>

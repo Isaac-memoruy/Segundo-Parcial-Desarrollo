@@ -1,27 +1,32 @@
 <template>
-  <header class="header">
-    <div class="header__container">
-      <h1 class="logo">Game Zone</h1>
-      <nav class="nav-menu">
-        <ul class="nav-menu__list">
-          <li v-for="item in navItems" :key="item.text">
-            <router-link :to="item.to" class="nav-menu__item">{{ item.text }}</router-link>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" style="background-color: #071129 !important;">
+    <div class="container-fluid">
+      <router-link to="/" class="navbar-brand fw-bold">
+        🎮 Game Zone
+      </router-link>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li v-for="item in navItems" :key="item.text" class="nav-item">
+            <router-link :to="item.to" class="nav-link">{{ item.text }}</router-link>
           </li>
         </ul>
-      </nav>
-      <div class="header__actions">
+      </div>
+      <div class="d-flex gap-2 align-items-center">
         <template v-if="user">
-          <div class="user">Hola, {{ user.nombre }}</div>
-          <button class="btn btn--outline" @click="goToBiblioteca">Mi biblioteca</button>
-          <button class="btn btn--outline" @click="logout">Cerrar sesión</button>
+          <span class="text-light small">Hola, <strong>{{ user.nombre }}</strong></span>
+          <button class="btn btn-sm btn-outline-light" @click="goToBiblioteca">Mi biblioteca</button>
+          <button class="btn btn-sm btn-outline-danger" @click="logout">Salir</button>
         </template>
         <template v-else>
-          <router-link to="/login" class="btn btn--outline user-action">Iniciar Sesión</router-link>
-          <router-link to="/registro" class="btn btn--primary user-action">Registrarse</router-link>
+          <router-link to="/login" class="btn btn-sm btn-outline-light">Iniciar Sesión</router-link>
+          <router-link to="/registro" class="btn btn-sm btn-primary">Registrarse</router-link>
         </template>
       </div>
     </div>
-  </header>
+  </nav>
 </template>
 
 <script>
@@ -70,12 +75,28 @@ export default {
 </script>
 
 <style scoped>
-.header { background: #071129; color: white; padding: 0.5rem 1rem; }
-.header__container { display:flex; align-items:center; gap:1rem; justify-content:space-between }
-.nav-menu__list { list-style:none; display:flex; gap:1rem; margin:0; padding:0 }
-.nav-menu__item { color: #fff; text-decoration:none }
-.logo { margin:0 }
-.header__actions { display:flex; gap:0.5rem; align-items:center }
-.btn { padding:0.4rem 0.7rem; border-radius:4px; border:1px solid rgba(255,255,255,0.1); background:transparent; color:#fff }
-.btn--primary { background: #1f83ff }
+.navbar {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1030;
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  margin-right: 2rem;
+  color: #fff !important;
+}
+
+.nav-link {
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #66c0f4 !important;
+}
+
+.nav-link.router-link-active {
+  color: #1f83ff !important;
+  font-weight: 600;
+}
 </style>
