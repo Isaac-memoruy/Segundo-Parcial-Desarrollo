@@ -1,6 +1,4 @@
-/* ============================
-   VARIABLES Y RESET GLOBAL
-   ============================ */
+
 
 :root {
   --steam-bg: #171a21;
@@ -42,9 +40,6 @@ body {
   color: #c7d5e0;
 }
 
-/* ============================
-   ANIMACIONES GLOBALES
-   ============================ */
 
 @keyframes fadeInUp {
   from {
@@ -98,9 +93,7 @@ body {
   }
 }
 
-/* ============================
-   COMPONENTES BOOTSTRAP PERSONALIZADOS
-   ============================ */
+
 
 .btn-primary {
   background-color: #1f83ff !important;
@@ -159,9 +152,7 @@ body {
   font-weight: 500;
 }
 
-/* ============================
-   ESTILOS ESPECÍFICOS HEREDADOS
-   ============================ */
+
 
 .game-card {
   transition: all 0.3s ease;
@@ -200,9 +191,7 @@ body {
   color: #c6d4df;
 }
 
-/* ============================
-   RESPONSIVE
-   ============================ */
+
 
 @media (max-width: 768px) {
   main {

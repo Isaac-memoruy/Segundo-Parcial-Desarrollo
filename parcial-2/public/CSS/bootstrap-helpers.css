@@ -1,14 +1,8 @@
-/* bootstrap-helpers.css
-   Pequeños overrides y utilidades para usar Bootstrap sin romper tu CSS existente.
-   Incluye sólo reglas seguras y clases de apoyo; edita con cuidado si necesitas cambios
-*/
-
-/* Preferencia de box-sizing para evitar sorpresas con utilidades de Bootstrap */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* Contenedor adaptado que puedes usar en App.vue o vistas para centrar contenido */
+
 .app-container {
   max-width: 1100px;
   margin: 0 auto;
@@ -16,9 +10,9 @@
   padding-right: 16px;
 }
 
-/* Botones personalizados basados en Bootstrap pero con aspecto controlado */
+
 .btn-custom {
-  background-color: #0b5ed7; /* color similar a btn-primary */
+  background-color: #0b5ed7; 
   color: #fff;
   border-radius: 6px;
   padding: 0.5rem 0.9rem;
@@ -27,26 +21,22 @@
   line-height: 1.2;
 }
 
-/* Hacer imágenes responsivas dentro de tus tarjetas */
+
 .img-responsive {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Evitar que los resets de Bootstrap cambien demasiado tus headers/footer */
+
 .header-preserve, .footer-preserve {
   background: inherit;
   color: inherit;
 }
 
-/* Pequeños ajustes para formularios para que coincidan con estilos previos */
+
 .form-control {
   border-radius: 6px;
 }
 
-/* Ejemplos de uso (no aplican nada por sí solos, son referencia):
-   - usa class="container app-container" en el wrapper principal
-   - para botones usa class="btn btn-primary" o class="btn btn-secondary"; si quieres el estilo propio usa class="btn-custom"
-   - para tarjetas usa class="card" y dentro img con class="img-responsive"
-*/
+

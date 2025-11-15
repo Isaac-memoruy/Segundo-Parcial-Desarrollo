@@ -4,7 +4,7 @@ export default class steamDataBase {
             console.error("Error: Se requiere un AppID.");
             return null;
         }
-        const urlProxy1 = 'https://vercel-proxy-two-beta.vercel.app/api/proxy?url='
+        const urlProxy1 = 'https://vercel-proxy-by-iron.vercel.app/api/proxy?url='
 
         try {
                 return this.importarJuegoP(appId, urlProxy1);
